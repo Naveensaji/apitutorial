@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:apisample/model/user.dart';
 import 'package:apisample/services/userapi.dart';
 import 'package:flutter/material.dart';
@@ -31,16 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
      body: ListView.builder(
       itemCount: users.length,
       itemBuilder: (context, index) {
-        final user=users[index];
-        final email=user.email;
-        final color=user.gender=='male'?Colors.grey :Colors.grey.shade200;     
+        final user=users[index];   
        return ListTile(
         leading: CircleAvatar(
           backgroundColor: Colors.black,
           child: Text('${index +1}')),
-        tileColor: color,
+        //tileColor: color,
         title: Text(user.fullname ),
-        subtitle: Text(user.location.city),
+        subtitle: Text(user.email),
        );
      },),
     );

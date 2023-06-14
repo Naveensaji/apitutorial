@@ -23,6 +23,26 @@ class User{
       required this.location
   });
 
+  factory User.fromMap(Map<String,dynamic>temp){
+    
+
+      final name=UserName.fromMap(temp['name']);
+      final dob= UserDob.fromMap(temp['dob']);
+      final location=UserLocation.fromMap(temp['location']);
+
+        return User(
+        gender: temp['gender'], 
+        email: temp['email'], 
+        phone: temp['phone'], 
+        nat: temp['nat'], 
+        cell: temp['cell'],
+        name: name,
+        dob: dob,
+        location: location
+        );
+
+  }
+
   String get  fullname{
     return '${name.title} ${name.first}${name.last}';
   }
