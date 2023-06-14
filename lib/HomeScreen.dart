@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Text('${index +1}')),
         tileColor: color,
         title: Text(user.fullname ),
-        subtitle: Text(email),
+        subtitle: Text(user.location.city),
        );
      },),
     );
